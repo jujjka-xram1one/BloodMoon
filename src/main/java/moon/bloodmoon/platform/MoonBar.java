@@ -12,9 +12,7 @@ import org.bukkit.plugin.Plugin;
 
 public class MoonBar {
     private final World world;
-
     private BossBar bossBar;
-
     private int task;
 
     public MoonBar(World world) {
@@ -29,65 +27,51 @@ public class MoonBar {
         this.task = task;
     }
 
+    @Override
     public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof MoonBar))
-            return false;
-        MoonBar other = (MoonBar)o;
-        if (!other.canEqual(this))
-            return false;
-        if (getTask() != other.getTask())
-            return false;
-        Object this$world = getWorld(), other$world = other.getWorld();
-        if ((this$world == null) ? (other$world != null) : !this$world.equals(other$world))
-            return false;
-        Object this$bossBar = getBossBar(), other$bossBar = other.getBossBar();
-        return !((this$bossBar == null) ? (other$bossBar != null) : !this$bossBar.equals(other$bossBar));
+        if (this == o) return true;
+        if (!(o instanceof MoonBar)) return false;
+        MoonBar other = (MoonBar) o;
+        return getTask() == other.getTask() && getWorld().equals(other.getWorld()) && getBossBar().equals(other.getBossBar());
     }
 
-    protected boolean canEqual(Object other) {
-        return other instanceof MoonBar;
-    }
-
+    @Override
     public int hashCode() {
-        int PRIME = 59;
-        int result = 1;
-        result = result * 59 + getTask();
-        Object $world = getWorld();
-        result = result * 59 + (($world == null) ? 43 : $world.hashCode());
-        Object $bossBar = getBossBar();
-        return result * 59 + (($bossBar == null) ? 43 : $bossBar.hashCode());
+        int result = getTask();
+        result = 59 * result + getWorld().hashCode();
+        result = 59 * result + getBossBar().hashCode();
+        return result;
     }
+
     public World getWorld() {
-        return this.world;
+        return world;
     }
 
     public BossBar getBossBar() {
-        return this.bossBar;
+        return bossBar;
     }
 
     public int getTask() {
-        return this.task;
+        return task;
     }
 
     public void addPlayer(Player player) {
-        this.bossBar.addPlayer(player);
+        bossBar.addPlayer(player);
     }
 
     public void create() {
-        this.bossBar = Bukkit.createBossBar("\u2721", BarColor.valueOf(BloodMoon.getInstance().getConfig().getString("barColor")), BarStyle.valueOf(BloodMoon.getInstance().getConfig().getString("barStyle")), new BarFlag[0]);
-        this.bossBar.setVisible(true);
-        this.bossBar.addFlag(BarFlag.CREATE_FOG);
+        bossBar = Bukkit.createBossBar("✪", BarColor.valueOf(BloodMoon.getInstance().getConfig().getString("barColor")),
+                BarStyle.valueOf(BloodMoon.getInstance().getConfig().getString("barStyle")));
+        bossBar.setVisible(true);
+        bossBar.addFlag(BarFlag.CREATE_FOG);
         cast();
     }
 
     public void cast() {
-        this.task = Bukkit.getScheduler().scheduleSyncRepeatingTask((Plugin)BloodMoon.getInstance(), new Runnable() {
-            public void run() {
-                for (Player player : MoonBar.this.getWorld().getPlayers())
-                    MoonBar.this.addPlayer(player);
+        task = Bukkit.getScheduler().scheduleSyncRepeatingTask((Plugin)BloodMoon.getInstance(), () -> {
+            for (Player player : world.getPlayers()) {
+                addPlayer(player);
             }
-        },  0L, 120L);
+        }, 0L, 120L);
     }
 }

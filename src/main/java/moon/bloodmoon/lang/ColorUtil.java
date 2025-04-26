@@ -10,6 +10,7 @@ public class ColorUtil {
 
     public static String format(String msg) {
         String version = Bukkit.getVersion();
+
         if (version.contains("1.16") || version.contains("1.17") || version.contains("1.18") || version.contains("1.19") || version.contains("1.20") || version.contains("1.21")) {
             Matcher matcher = pattern.matcher(msg);
             while (matcher.find()) {

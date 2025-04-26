@@ -1,33 +1,47 @@
 package moon.bloodmoon.configuration;
 
-import java.io.File;
-import java.util.Arrays;
-import java.util.List;
 import moon.bloodmoon.BloodMoon;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Objects;
+
 public class CashConfig {
-    public BloodMoon getInstance() {
-        return this.instance;
+
+    private final File cashFile;
+    private final FileConfiguration cashConfig;
+
+    public CashConfig() {
+        BloodMoon plugin = BloodMoon.getInstance();
+        this.cashFile = new File(plugin.getDataFolder(), "cash.yml");
+
+        if (!cashFile.exists()) {
+            plugin.saveResource("cash.yml", false);
+        }
+
+        this.cashConfig = YamlConfiguration.loadConfiguration(cashFile);
     }
-
-    private BloodMoon instance = BloodMoon.getInstance();
-
-    private File folder = this.instance.getServer().getPluginManager().getPlugin(this.instance.getName()).getDataFolder();
 
     public FileConfiguration getCashYml() {
-        return this.cashYml;
+        return cashConfig;
     }
 
-    private FileConfiguration cashYml = (FileConfiguration)YamlConfiguration.loadConfiguration(getFather());
-
     public File getFather() {
-        List<File> files = Arrays.asList(this.folder.listFiles());
-        for (File Ffile : files) {
-            if (Ffile.getName().equals("cash.yml"))
-                return Ffile;
+        return cashFile;
+    }
+
+    public static void saveConfigFile(FileConfiguration config) {
+        try {
+            File file = new File(
+                    Objects.requireNonNull(BloodMoon.getInstance()).getDataFolder(),
+                    "cash.yml"
+            );
+            config.save(file);
+        } catch (IOException e) {
+            BloodMoon.getInstance().getLogger().severe("Failed to save cash.yml");
+            e.printStackTrace();
         }
-        return null;
     }
 }

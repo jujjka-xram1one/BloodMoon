@@ -9,10 +9,12 @@ import org.apache.logging.log4j.core.Logger;
 import org.apache.logging.log4j.message.Message;
 
 public class FilterConsole implements Filter {
+
     public Filter.Result checkMessage(String message) {
-        if (message
-                .contains("Named entity") || message.contains("Wrong location") || message.contains("Played sound") || message.contains("Could not save"))
+        if (message.contains("Named entity") || message.contains("Wrong location") ||
+                message.contains("Played sound") || message.contains("Could not save")) {
             return Filter.Result.DENY;
+        }
         return Filter.Result.NEUTRAL;
     }
 
@@ -42,56 +44,65 @@ public class FilterConsole implements Filter {
         return checkMessage(event.getMessage().getFormattedMessage());
     }
 
-    public Filter.Result filter(Logger arg0, Level arg1, Marker arg2, String message, Object... arg4) {
+    public Filter.Result filter(Logger logger, Level level, Marker marker, String message, Object... params) {
         return checkMessage(message);
     }
 
-    public Filter.Result filter(Logger arg0, Level arg1, Marker arg2, String message, Object arg4) {
+    public Filter.Result filter(Logger logger, Level level, Marker marker, String message, Object param) {
         return checkMessage(message);
     }
 
-    public Filter.Result filter(Logger arg0, Level arg1, Marker arg2, Object message, Throwable arg4) {
+    @Override
+    public Result filter(Logger logger, Level level, Marker marker, String message, Object p0, Object p1) {
+        return null;
+    }
+
+    @Override
+    public Result filter(Logger logger, Level level, Marker marker, String message, Object p0, Object p1, Object p2) {
+        return null;
+    }
+
+    @Override
+    public Result filter(Logger logger, Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3) {
+        return null;
+    }
+
+    @Override
+    public Result filter(Logger logger, Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3, Object p4) {
+        return null;
+    }
+
+    @Override
+    public Result filter(Logger logger, Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3, Object p4, Object p5) {
+        return null;
+    }
+
+    @Override
+    public Result filter(Logger logger, Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3, Object p4, Object p5, Object p6) {
+        return null;
+    }
+
+    @Override
+    public Result filter(Logger logger, Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3, Object p4, Object p5, Object p6, Object p7) {
+        return null;
+    }
+
+    @Override
+    public Result filter(Logger logger, Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3, Object p4, Object p5, Object p6, Object p7, Object p8) {
+        return null;
+    }
+
+    @Override
+    public Result filter(Logger logger, Level level, Marker marker, String message, Object p0, Object p1, Object p2, Object p3, Object p4, Object p5, Object p6, Object p7, Object p8, Object p9) {
+        return null;
+    }
+
+    public Filter.Result filter(Logger logger, Level level, Marker marker, Object message, Throwable throwable) {
         return checkMessage(message.toString());
     }
 
-    public Filter.Result filter(Logger arg0, Level arg1, Marker arg2, Message message, Throwable arg4) {
+    public Filter.Result filter(Logger logger, Level level, Marker marker, Message message, Throwable throwable) {
         return checkMessage(message.getFormattedMessage());
-    }
-
-    public Filter.Result filter(Logger arg0, Level arg1, Marker arg2, String message, Object arg4, Object arg5) {
-        return checkMessage(message);
-    }
-
-    public Filter.Result filter(Logger arg0, Level arg1, Marker arg2, String message, Object arg4, Object arg5, Object arg6) {
-        return checkMessage(message);
-    }
-
-    public Filter.Result filter(Logger arg0, Level arg1, Marker arg2, String message, Object arg4, Object arg5, Object arg6, Object arg7) {
-        return checkMessage(message);
-    }
-
-    public Filter.Result filter(Logger arg0, Level arg1, Marker arg2, String message, Object arg4, Object arg5, Object arg6, Object arg7, Object arg8) {
-        return checkMessage(message);
-    }
-
-    public Filter.Result filter(Logger arg0, Level arg1, Marker arg2, String message, Object arg4, Object arg5, Object arg6, Object arg7, Object arg8, Object arg9) {
-        return checkMessage(message);
-    }
-
-    public Filter.Result filter(Logger arg0, Level arg1, Marker arg2, String message, Object arg4, Object arg5, Object arg6, Object arg7, Object arg8, Object arg9, Object arg10) {
-        return checkMessage(message);
-    }
-
-    public Filter.Result filter(Logger arg0, Level arg1, Marker arg2, String message, Object arg4, Object arg5, Object arg6, Object arg7, Object arg8, Object arg9, Object arg10, Object arg11) {
-        return checkMessage(message);
-    }
-
-    public Filter.Result filter(Logger arg0, Level arg1, Marker arg2, String message, Object arg4, Object arg5, Object arg6, Object arg7, Object arg8, Object arg9, Object arg10, Object arg11, Object arg12) {
-        return checkMessage(message);
-    }
-
-    public Filter.Result filter(Logger arg0, Level arg1, Marker arg2, String message, Object arg4, Object arg5, Object arg6, Object arg7, Object arg8, Object arg9, Object arg10, Object arg11, Object arg12, Object arg13) {
-        return checkMessage(message);
     }
 
     public Filter.Result getOnMatch() {

@@ -15,27 +15,27 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class BloodSword {
     private ItemStack itemStack;
+    private int damage = Weapon.getDamage(Weapon.Hand.BLOOD_SWORD.name());
 
     public ItemStack getItemStack() {
         return this.itemStack;
     }
 
-    private int damage = Weapon.getDamage(Weapon.Hand.BLOOD_SWORD.name());
-
     public BloodSword() {
         this.itemStack = new ItemStack(Material.DIAMOND_SWORD);
         ItemMeta meta = this.itemStack.getItemMeta();
-        meta.setCustomModelData(Integer.valueOf(845345346));
+        meta.setCustomModelData(845345346);
         meta.setDisplayName((new LangManager()).msg("items.bloodSword"));
-        meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_ATTRIBUTES });
-        meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_UNBREAKABLE });
-        meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_ENCHANTS });
-        meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_DESTROYS });
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_UNBREAKABLE, ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_DESTROYS);
         AttributeModifier modifier = new AttributeModifier(UUID.randomUUID(), "generic.attackDamage", this.damage, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
         meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, modifier);
-        if (!Weapon.getEnch(Weapon.Hand.BLOOD_SWORD.name()).isEmpty())
-            for (Enchantment e : Weapon.getEnch(Weapon.Hand.BLOOD_SWORD.name()))
+
+        if (!Weapon.getEnch(Weapon.Hand.BLOOD_SWORD.name()).isEmpty()) {
+            for (Enchantment e : Weapon.getEnch(Weapon.Hand.BLOOD_SWORD.name())) {
                 meta.addEnchant(e, BloodMoon.getInstance().getConfig().getInt("powerItemEffect"), true);
+            }
+        }
+
         this.itemStack.setItemMeta(meta);
     }
 }

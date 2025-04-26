@@ -15,22 +15,18 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class BloodBow {
     private ItemStack itemStack;
+    private int damage = Weapon.getDamage(Weapon.Hand.BLOOD_BOW.name());
 
     public ItemStack getItemStack() {
         return this.itemStack;
     }
 
-    private int damage = Weapon.getDamage(Weapon.Hand.BLOOD_BOW.name());
-
     public BloodBow() {
         this.itemStack = new ItemStack(Material.BOW);
         ItemMeta meta = this.itemStack.getItemMeta();
-        meta.setCustomModelData(Integer.valueOf(254773454));
+        meta.setCustomModelData(254773454);
         meta.setDisplayName((new LangManager()).msg("items.bloodBow"));
-        meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_ATTRIBUTES });
-        meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_UNBREAKABLE });
-        meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_ENCHANTS });
-        meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_DESTROYS });
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_UNBREAKABLE, ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_DESTROYS);
         AttributeModifier modifier = new AttributeModifier(UUID.randomUUID(), "generic.attackDamage", this.damage, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
         meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, modifier);
         if (!Weapon.getEnch(Weapon.Hand.BLOOD_BOW.name()).isEmpty())

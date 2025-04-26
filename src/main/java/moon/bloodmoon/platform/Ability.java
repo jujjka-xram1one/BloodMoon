@@ -23,11 +23,9 @@ public enum Ability {
     BLOOD_CURSE;
 
     private double chance;
-
     public double getChance() {
         return this.chance;
     }
-
     public void setChance(double chance) {
         this.chance = chance;
     }

@@ -8,20 +8,17 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class BloodAxe {
+    private ItemStack itemStack = new ItemStack(Material.STONE_AXE);
+
     public ItemStack getItemStack() {
         return this.itemStack;
     }
 
-    private ItemStack itemStack = new ItemStack(Material.STONE_AXE);
-
     public BloodAxe() {
         ItemMeta meta = this.itemStack.getItemMeta();
-        meta.setCustomModelData(Integer.valueOf(246353));
+        meta.setCustomModelData(246353);
         meta.setDisplayName((new LangManager()).msg("items.bloodAxe"));
-        meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_ATTRIBUTES });
-        meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_UNBREAKABLE });
-        meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_ENCHANTS });
-        meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_DESTROYS });
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_UNBREAKABLE, ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_DESTROYS);
         meta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
         this.itemStack.setItemMeta(meta);
     }

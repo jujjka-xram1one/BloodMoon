@@ -70,37 +70,12 @@ public class BloodDungeon {
         return world;
     }
 
-    public RandomCord getRandomCord() {
-        return randomCord;
-    }
-
-    public int getFirstCooldown() {
-        return firstCooldown;
-    }
-
-    public String getSchem() {
-        return schem;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
     public Location getLocation() {
         return location;
     }
 
     public void setLocation(Location location) {
         this.location = location;
-    }
-
-    public static BloodDungeon getDungeon(String id) {
-        for (BloodDungeon dungeon : dungeonList) {
-            if (dungeon.getId().equals(id)) {
-                return dungeon;
-            }
-        }
-        return null;
     }
 
     public void delete() {

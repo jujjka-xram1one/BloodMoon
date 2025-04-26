@@ -13,18 +13,28 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class BloodArrow {
-    private BloodMoon instance = BloodMoon.getInstance();
+    private final BloodMoon instance = BloodMoon.getInstance();
 
     public void shot(final Player player) {
         final Location before = player.getLocation();
-        final Location[] locations = { before.clone().add(-1.0D, 0.0D, 0.0D), before.clone().add(0.0D, 1.0D, 0.0D), before.clone().add(0.0D, 0.0D, -2.0D), before.clone().add(-1.0D, 0.0D, -1.0D), before.clone().add(-1.0D, 0.0D, 0.0D), before.clone().add(0.0D, 1.0D, 0.0D), before.clone().add(0.0D, 0.0D, -2.0D) };
-        (new BukkitRunnable() {
+        final Location[] locations = {
+                before.clone().add(-1.0D, 0.0D, 0.0D),
+                before.clone().add(0.0D, 1.0D, 0.0D),
+                before.clone().add(0.0D, 0.0D, -2.0D),
+                before.clone().add(-1.0D, 0.0D, -1.0D),
+                before.clone().add(-1.0D, 0.0D, 0.0D),
+                before.clone().add(0.0D, 1.0D, 0.0D),
+                before.clone().add(0.0D, 0.0D, -2.0D)
+        };
+
+        new BukkitRunnable() {
             int tick = 0;
 
+            @Override
             public void run() {
                 if (this.tick < locations.length) {
                     player.teleport(locations[this.tick]);
-                    BloodArrow.this.giveDamage(player);
+                    giveDamage(player);
                     player.sendTitle("系", "", 4, 4, 4);
                     this.tick++;
                 } else {
@@ -32,21 +42,22 @@ public class BloodArrow {
                     cancel();
                 }
             }
-        }).runTaskTimer((Plugin)this.instance, 0L, 5L);
+        }.runTaskTimer((Plugin) instance, 0L, 5L);
     }
 
-    public void arrow_part(final Arrow arrow) {
-        (new BukkitRunnable() {
-            World world = arrow.getWorld();
+    public void arrowPart(final Arrow arrow) {
+        new BukkitRunnable() {
+            final World world = arrow.getWorld();
 
+            @Override
             public void run() {
                 if (arrow.isOnGround() || arrow.isDead()) {
                     cancel();
                 } else {
-                    this.world.playEffect(arrow.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK, 3);
+                    world.playEffect(arrow.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK, 3);
                 }
             }
-        }).runTaskTimer((Plugin)this.instance, 0L, 1L);
+        }.runTaskTimer((Plugin) instance, 0L, 1L);
     }
 
     private void giveDamage(Player player) {

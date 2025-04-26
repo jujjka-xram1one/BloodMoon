@@ -44,7 +44,7 @@ public class WorldListener implements Listener {
             event.setCancelled(true);
             return;
         }
-        if (type == EntityType.WOLF && MoonUniverse.random(Exploder.getChance())) {
+        if (type == EntityType.WOLF && MoonUniverse.randomChance(Exploder.getChance())) {
             new Exploder(event.getLocation());
             return;
         }
@@ -59,13 +59,13 @@ public class WorldListener implements Listener {
         if (!this.mobUtil.contains(type) || type == EntityType.STRAY || type == EntityType.HUSK) {
             if (type == EntityType.ZOMBIE) {
                 MoonMob moonMob = this.mobUtil.getMob(EntityType.ZOMBIE);
-                if (moonMob != null && MoonUniverse.random(moonMob.getChance())) {
+                if (moonMob != null && MoonUniverse.randomChance(moonMob.getChance())) {
                     moonMob.spawn(event.getLocation());
                     event.setCancelled(true);
                 }
             } else if (type == EntityType.STRAY || type == EntityType.HUSK || type == EntityType.DROWNED) {
                 MoonMob moonMob = this.mobUtil.getMob(type);
-                if (moonMob != null && MoonUniverse.random(moonMob.getChance())) {
+                if (moonMob != null && MoonUniverse.randomChance(moonMob.getChance())) {
                     moonMob.spawn(event.getLocation());
                     event.setCancelled(true);
                 }
@@ -74,16 +74,16 @@ public class WorldListener implements Listener {
         }
         event.setCancelled(true);
         MoonMob mob = this.mobUtil.getMob(type);
-        if (mob != null && MoonUniverse.random(mob.getChance()))
+        if (mob != null && MoonUniverse.randomChance(mob.getChance()))
             mob.spawn(event.getLocation());
     }
 
     @EventHandler
     public void playerDamageEvent(EntityDamageByEntityEvent event) {
-        if(!(event.getEntity() instanceof Player) || !(event.getDamager() instanceof Player)){
+        if (!(event.getEntity() instanceof Player) || !(event.getDamager() instanceof Player)) {
             return;
         }
-        if(!BloodMoon.getInstance().getConfig().isBoolean("pvp")){
+        if (!BloodMoon.getInstance().getConfig().isBoolean("pvp")) {
             event.setCancelled(true);
         }
     }
@@ -98,7 +98,7 @@ public class WorldListener implements Listener {
         EntityType type = entity.getType();
         if (!this.mobUtil.contains(type))
             return;
-        LivingEntity e = (LivingEntity)entity;
+        LivingEntity e = (LivingEntity) entity;
         if ((new Random()).nextDouble() <= BloodMoon.getInstance().getConfig().getDouble("chanceLastHealth")) {
             e.setHealth(e.getMaxHealth());
             event.getEntity().getWorld().strikeLightningEffect(entity.getLocation());
@@ -126,18 +126,18 @@ public class WorldListener implements Listener {
         EntityType type = damager.getType();
         if (!this.mobUtil.contains(type))
             return;
-        NamespacedKey key = new NamespacedKey((Plugin)BloodMoon.getInstance(), "moonId");
+        NamespacedKey key = new NamespacedKey((Plugin) BloodMoon.getInstance(), "moonId");
         if (!damager.getPersistentDataContainer().has(key, PersistentDataType.INTEGER))
             return;
-        Player player = (Player)entity;
-        int moonId = ((Integer)damager.getPersistentDataContainer().get(key, PersistentDataType.INTEGER)).intValue();
+        Player player = (Player) entity;
+        int moonId = ((Integer) damager.getPersistentDataContainer().get(key, PersistentDataType.INTEGER)).intValue();
         MoonMob mob = this.mobUtil.getMob(type);
         if (moonId == 6)
             mob = this.mobUtil.getMob(EntityType.DROWNED);
         if (mob != null && !mob.getAbilitys().isEmpty())
             for (Ability ability : mob.getAbilitys()) {
-                if (MoonUniverse.random(ability.getChance()))
-                    activateAbility(mob, ability, (LivingEntity)damager, player);
+                if (MoonUniverse.randomChance(ability.getChance()))
+                    activateAbility(mob, ability, (LivingEntity) damager, player);
             }
     }
 
@@ -145,20 +145,20 @@ public class WorldListener implements Listener {
     public void onEntityExplode(EntityExplodeEvent event) {
         if (event.getEntityType() != EntityType.CREEPER)
             return;
-        LivingEntity entity = (LivingEntity)event.getEntity();
+        LivingEntity entity = (LivingEntity) event.getEntity();
         if (!MoonUniverse.getWorldMoons().contains(entity.getWorld()))
             return;
         MoonMob mob = this.mobUtil.getMob(EntityType.CREEPER);
-        if (mob != null && mob.getAbilitys().contains(Ability.BLOOD_EXPLOSION) && MoonUniverse.random(this.mobUtil.getAbility(mob, Ability.BLOOD_EXPLOSION).getChance())) {
+        if (mob != null && mob.getAbilitys().contains(Ability.BLOOD_EXPLOSION) && MoonUniverse.randomChance(this.mobUtil.getAbility(mob, Ability.BLOOD_EXPLOSION).getChance())) {
             event.setCancelled(true);
             (new BloodExplode()).explode(event.getLocation());
         }
     }
 
     @EventHandler
-    public void slimeBan(SlimeSplitEvent event){
-        World world = event.getEntity().getWorld();;
-        if(MoonUniverse.getWorldMoons().contains(world)){
+    public void slimeBan(SlimeSplitEvent event) {
+        World world = event.getEntity().getWorld();
+        if (MoonUniverse.getWorldMoons().contains(world)) {
             event.setCancelled(true);
         }
     }
@@ -171,7 +171,7 @@ public class WorldListener implements Listener {
             return;
         }
 
-        if(BloodMoon.getInstance().getConfig().isBoolean("remove-loot-when-delete")) {
+        if (BloodMoon.getInstance().getConfig().isBoolean("remove-loot-when-delete")) {
             if (MoonMob.getMobs().contains(livingEntity) && isDeleteMobs) {
                 MoonMob.getMobs().remove(livingEntity);
                 event.getDrops().clear();
@@ -181,23 +181,23 @@ public class WorldListener implements Listener {
 
         MoonMob mob = this.mobUtil.getMob(type);
         event.getDrops().clear();
-        if (MoonUniverse.random(BloodPearl.getChanceDrop())) {
+        if (MoonUniverse.randomChance(BloodPearl.getChanceDrop())) {
             event.getDrops().add((new BloodPearl()).getItemStack());
         }
         MoonMob.getMobs().remove(event.getEntity());
         if (!mob.getDrop().isEmpty())
             for (BloodDrop drop : mob.getDrop()) {
-                if (MoonUniverse.random(drop.getChance())) {
+                if (MoonUniverse.randomChance(drop.getChance())) {
                     event.getDrops().add(drop.getStack());
                 }
             }
     }
 
     private void activateAbility(MoonMob mob, Ability ability, LivingEntity entity, Player player) {
-        if (!mob.getAbilitys().isEmpty() && MoonUniverse.random(ability.getChance()))
+        if (!mob.getAbilitys().isEmpty() && MoonUniverse.randomChance(ability.getChance()))
             switch (ability) {
                 case BLOOD_DOME:
-                    (new BloodDome()).aur(entity.getLocation(),6,1.0,1,false);
+                    (new BloodDome()).aur(entity.getLocation(), 6, 1.0, 1, false);
                     break;
                 case BLOOD_BOLOTO:
                     (new BloodSwamp()).tune(player);
@@ -224,7 +224,7 @@ public class WorldListener implements Listener {
                     (new BloodFire()).fire(player);
                     break;
                 case BLOOD_INPUT:
-                    (new BloodFire()).holeInput((LivingEntity)player);
+                    (new BloodFire()).holeInput((LivingEntity) player);
                     break;
                 case BLOOD_PUSH:
                     (new BloodPush()).push(entity);

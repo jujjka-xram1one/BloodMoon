@@ -4,7 +4,6 @@ import org.bukkit.inventory.ItemStack;
 
 public class BloodDrop {
     private final double chance;
-
     private final ItemStack stack;
 
     public BloodDrop(double chance, ItemStack stack) {
@@ -12,33 +11,24 @@ public class BloodDrop {
         this.stack = stack;
     }
 
+    @Override
     public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof BloodDrop))
-            return false;
-        BloodDrop other = (BloodDrop)o;
-        if (!other.canEqual(this))
-            return false;
-        if (Double.compare(getChance(), other.getChance()) != 0)
-            return false;
-        Object this$stack = getStack(), other$stack = other.getStack();
-        return !((this$stack == null) ? (other$stack != null) : !this$stack.equals(other$stack));
+        if (o == this) return true;
+        if (!(o instanceof BloodDrop)) return false;
+        BloodDrop other = (BloodDrop) o;
+        return Double.compare(getChance(), other.getChance()) == 0 && getStack().equals(other.getStack());
     }
 
-    protected boolean canEqual(Object other) {
-        return other instanceof BloodDrop;
-    }
-
+    @Override
     public int hashCode() {
-        int PRIME = 59;
         int result = 1;
-        long $chance = Double.doubleToLongBits(getChance());
-        result = result * 59 + (int)($chance >>> 32L ^ $chance);
-        Object $stack = getStack();
-        return result * 59 + (($stack == null) ? 43 : $stack.hashCode());
+        long chanceBits = Double.doubleToLongBits(getChance());
+        result = 59 * result + (int) (chanceBits ^ (chanceBits >>> 32));
+        result = 59 * result + getStack().hashCode();
+        return result;
     }
 
+    @Override
     public String toString() {
         return "BloodDrop(chance=" + getChance() + ", stack=" + getStack() + ")";
     }

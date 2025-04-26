@@ -5,7 +5,7 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.plugin.Plugin;
 
 public class MoonKeys {
-    public static NamespacedKey key = new NamespacedKey((Plugin)BloodMoon.getInstance(), "moonId");
-    public static NamespacedKey keyU = new NamespacedKey((Plugin)BloodMoon.getInstance(), "moonUUID");
-    public static NamespacedKey keyA = new NamespacedKey((Plugin)BloodMoon.getInstance(), "moonBarrow");
+    public static final NamespacedKey key = new NamespacedKey(BloodMoon.getInstance(), "moonId");
+    public static final NamespacedKey keyU = new NamespacedKey(BloodMoon.getInstance(), "moonUUID");
+    public static final NamespacedKey keyA = new NamespacedKey(BloodMoon.getInstance(), "moonBarrow");
 }
