@@ -1,0 +1,42 @@
+m:
+  notOp: "#A42626사용할 수 없음"
+  worldNotSelect: "#A42626세계가 선택되지 않았습니다"
+  worldNotFind: "#A42626세계를 찾을 수 없습니다"
+  worldNotMoon: "#A42626세계에 달이 없습니다"
+  worldNotNight: "#A42626세계가 밤이 아닙니다"
+  worldHaveMoon: "#A42626세계에 달이 있습니다"
+  worldTimeWait: "#A42626기다려 주십시오.."
+  worldDeleteTask: "#A42626타이머가 삭제되었습니다"
+  worldDeleteMoon: "#A42626달이 삭제되었습니다"
+  amountMobs: "&f무리: #A42626%s"
+  disarm: "#A42626능력이 차단되었습니다"
+  remains: "&에프했다:%에스#42626 초"
+
+  helpMessage: "
+    &c===== 블러드 문 - 명령어 =====
+    &f/moon startTimer <월드> &7- 지정된 월드에서 달 타이머를 시작합니다.
+    &f/moon cancelTimer <월드> &7- 지정된 월드의 달 타이머를 취소합니다.
+    &f/moon createMoon <월드> &7- 강제로 블러드 문을 생성합니다.
+    &f/moon deleteMoon <월드> &7- 지정된 월드에서 블러드 문을 제거합니다.
+    &f/moon amountMobs &7- 블러드 문으로 생성된 몹의 수를 표시합니다.
+    &f/moon reload &7- BloodMoon 플러그인을 다시 로드합니다.
+    &f/moon deleteMobs &7- 블러드 문으로 생성된 모든 몹을 삭제합니다.
+    &f/moon info <월드> &7- 블러드 문 종료까지 남은 시간을 표시합니다.
+    &f/moon allDungeons &7- 모든 던전과 그 좌표를 표시합니다.
+    &f/moon help &7- 이 메시지를 표시합니다."
+
+
+moon:
+  startChatMessage: "#BF0D0D달이 붉게 물들 때, 밤의 소리는 어둠의 음악이 됩니다\n#BF0D0D그림자에서 고대 생물을 불러내며\n#BF0D0D고대 시대의 마법을 가져오는 피의 달은 당신의 힘을 시험합니다."
+  startBarMessage: "&4달이 떠오릅니다.."
+
+  stopChatMessage: "#BF0D0D이 밤은 사라지지만, 달빛 아래에서 일어난 일들은 기억에 남습니다."
+  stopBarMessage: "&4달이 지워집니다.."
+items:
+  bloodPearl: "&4달의 눈"
+  bloodAxe: "&4피의 도끼"
+  bloodSword: "&4피의 검"
+  bloodPick: "&4피의 곡괭이"
+  bloodBow: "&4피의 활"
+  lore:
+    - " - 달을 소환하다 - "

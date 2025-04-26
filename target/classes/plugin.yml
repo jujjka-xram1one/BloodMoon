@@ -1,0 +1,10 @@
+name: BloodMoon
+version: 1.0.7
+main: moon.bloodmoon.BloodMoon
+api-version: 1.14
+authors: [Jujja]
+
+commands:
+  moon:
+    permission: moon.moonCmd
+    aliases: [bloodmoon]

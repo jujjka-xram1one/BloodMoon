@@ -1,0 +1,42 @@
+m:
+  notOp: "#A42626利用できません"
+  worldNotSelect: "#A42626ワールドが選択されていません"
+  worldNotFind: "#A42626ワールドが見つかりません"
+  worldNotMoon: "#A42626ワールドには月がありません"
+  worldNotNight: "#A42626ワールドは夜ではありません"
+  worldHaveMoon: "#A42626ワールドには月があります"
+  worldTimeWait: "#A42626お待ちください.."
+  worldDeleteTask: "#A42626タイマーが削除されました"
+  worldDeleteMoon: "#A42626月が削除されました"
+  amountMobs: "&fモブ数: #A42626%s"
+  disarm: "#A42626能力がブロックされました"
+  remains: "&Fかかった:%s#A42626秒"
+
+  helpMessage: "
+    &c===== ブラッドムーン - コマンド =====
+    &f/moon startTimer <ワールド> &7- 指定したワールドで月のタイマーを開始します。
+    &f/moon cancelTimer <ワールド> &7- 指定したワールドの月のタイマーをキャンセルします。
+    &f/moon createMoon <ワールド> &7- 強制的にブラッドムーンを生成します。
+    &f/moon deleteMoon <ワールド> &7- 指定したワールドのブラッドムーンを削除します。
+    &f/moon amountMobs &7- 月によってスポーンしたモブの数を表示します。
+    &f/moon reload &7- BloodMoonプラグインをリロードします。
+    &f/moon deleteMobs &7- 月によってスポーンしたすべてのモブを削除します。
+    &f/moon info <ワールド> &7- 月が終了するまでの残り時間を表示します。
+    &f/moon allDungeons &7- すべてのダンジョンとその座標を表示します。
+    &f/moon help &7- このメッセージを表示します。"
+
+
+moon:
+  startChatMessage: "#BF0D0D月が赤くなると、夜の音が闇のメロディに変わります\n#BF0D0Dそして古代の存在が闇から呼び出されます\n#BF0D0D彼らの力が試されるでしょう、血の月は古代の魔法を秘めています。"
+  startBarMessage: "&4月が昇る.."
+
+  stopChatMessage: "#BF0D0Dこの夜は過ぎ去りますが、月の光の下で起こった不思議で異常な出来事の痕跡が記憶に残ります。"
+  stopBarMessage: "&4月が沈む.."
+items:
+  bloodPearl: "&4月の目"
+  bloodAxe: "&4血の斧"
+  bloodSword: "&4血の剣"
+  bloodPick: "&4血のつるはし"
+  bloodBow: "&4血の弓"
+  lore:
+    - " - 月を召喚する - "

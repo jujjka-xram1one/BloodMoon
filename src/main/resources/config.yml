@@ -1,0 +1,227 @@
+lang: en.yml
+chanceMoon: 0.1
+bar: true
+startMoonSound: true
+stopMoonSound: true
+colorDamageParticle: RED
+amountDamageParticle: 7
+particle: REDSTONE
+blockCmd: false
+damageSound: true
+deleteMob: false
+chanceLastHealth: 0.01
+powerMobEffect: 3
+powerItemEffect: 2
+spawnerSpawn: true
+barColor: RED
+barStyle: SOLID
+pvp: true
+remove-loot-when-delete: true
+
+startCommand: #without /
+  -
+stopCommand: #without /
+  -
+
+send-enable-plugin-message: true
+enable-plugin-message: "&4&lBloodMoon &r&fhas already started! Thank you for your purchase"
+
+mobs:
+  ZOMBIE:
+    name: "&4Ghoul"
+    nameVisible: true
+    health: 40
+    damage: 4
+    speed: 0.25 #default = 0.23
+    speed_attack: 8 # default = 4.0
+    chance: 0.1
+    weapon:
+      hand: blood_sword
+      ability:
+        blood_pulse:
+          chance: 0.1
+    drops:
+      one:
+        chance: 0.05
+        IA: false
+        ItemStack: DIAMOND
+        Amount: 3
+    effects:
+      - SPEED
+
+  SKELETON:
+    name: "&4Ghoul"
+    health: 35
+    damage: 5
+    speed: 0.25
+    speed_attack: 6.5
+    chance: 1.0
+    weapon:
+      hand: blood_bow
+      ability:
+        blood_beating_arrow:
+          chance: 0.25
+  STRAY:
+    name: "&4Ghoul"
+    health: 35
+    damage: 5
+    speed: 0.25
+    speed_attack: 6.5
+    chance: 1.0
+    weapon:
+      hand: blood_bow
+      ability:
+        blood_beating_arrow:
+          chance: 0.15
+  PHANTOM:
+    name: "&4Ghoul"
+    health: 30
+    damage: 7
+    speed: 0.3
+    speed_attack: 6.5
+    chance: 1.0
+    weapon:
+      hand:
+      ability:
+        blood_capture:
+          chance: 1.0
+  SPIDER:
+    name: "&4Ghoul"
+    health: 50
+    damage: 8
+    speed: 0.2
+    speed_attack: 6.5
+    chance: 0.1
+    weapon:
+      hand:
+      ability:
+        blood_fog:
+          chance: 1.0
+        blood_dome:
+          chance: 0.1
+  CREEPER:
+    name: "&4Ghoul"
+    health: 20
+    damage: 3
+    speed: 0.3
+    speed_attack: 6.5
+    chance: 1.0
+    weapon:
+      hand:
+      ability:
+        blood_explosion:
+          chance: 0.5
+  HUSK:
+    name: "&4Ghoul"
+    health: 45
+    damage: 6
+    speed: 0.2
+    speed_attack: 6.5
+    chance: 0.1
+    weapon:
+      hand: blood_pickaxe
+      ability:
+        blood_swamp:
+          chance: 0.2
+        blood_ritual:
+          chance: 0.1
+  ENDERMAN:
+    name: "&4Ghoul"
+    health: 30
+    damage: 5
+    speed: 0.4
+    speed_attack: 6.5
+    chance: 1.0
+    weapon:
+      hand:
+      ability:
+        blood_hole:
+          chance: 0.05
+  DROWNED:
+    name: "&4Ghoul"
+    health: 60
+    damage: 1
+    speed: 0.1
+    speed_attack: 6.5
+    chance: 0.5
+    weapon:
+      hand:
+      ability:
+        blood_disarm:
+          chance: 0.2
+
+  WITCH:
+    name: "&4Ghoul"
+    health: 15
+    damage: 5
+    speed: 0.3
+    speed_attack: 6.5
+    chance: 0.5
+    weapon:
+      hand:
+      ability:
+        blood_ritual:
+          chance: 0.2
+
+  SLIME:
+    name: "&4Ghoul"
+    health: 5
+    damage: 10
+    speed: 0.2
+    speed_attack: 8.5
+    chance: 1.0
+    weapon:
+      hand:
+      ability:
+        blood_explosion:
+          chance: 0.09
+
+  CAVE_SPIDER:
+    name: "&4Ghoul"
+    health: 8
+    damage: 1
+    speed: 0.31
+    speed_attack: 8.5
+    chance: 1.0
+    weapon:
+      hand:
+      ability:
+        blood_fog:
+          chance: 1.0
+
+EXPLODER:
+  chance_spawn: 0.1
+  needPlayers: 3
+
+items:
+  bloodPearl:
+    chance: 1.0
+    crash: false
+    chanceDrop: 1.0
+
+FOG:
+  active: 60
+  timeOut: 60
+
+weapon:
+  blood_bow:
+    damage: 4
+    effects:
+      - ARROW_FIRE
+
+  blood_sword:
+    damage: 5
+    effects:
+      - FIRE_ASPECT
+
+danges:
+  dugout:
+    world: world
+    radius-spawn:
+      1: -2000
+      2: 2000
+    firstCooldown: 0
+    schemName: onedungeon
+    explode: false
+
+    message: "[&l&4Bloody Dungeon&r] &l&4Attention! &rDungeon &4%name &fhas appeared \nCoordinates {&4%x&r,&4%y&r,&4%z&r}"

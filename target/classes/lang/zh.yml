@@ -1,0 +1,42 @@
+m:
+  notOp: "#A42626不可用"
+  worldNotSelect: "#A42626未选择世界"
+  worldNotFind: "#A42626找不到世界"
+  worldNotMoon: "#A42626世界没有月亮"
+  worldNotNight: "#A42626世界不是夜晚"
+  worldHaveMoon: "#A42626世界有月亮"
+  worldTimeWait: "#A42626请稍候.."
+  worldDeleteTask: "#A42626计时器已删除"
+  worldDeleteMoon: "#A42626月亮已删除"
+  amountMobs: "&f暴民: #A42626%s"
+  disarm: "#A42626能力已被禁用"
+  remains: "&F花了:%s#A42626秒"
+  helpMessage: "
+      &c===== 血月 - 指令列表 =====
+      &f/moon startTimer <世界> &7- 在指定世界启动血月计时器。
+      &f/moon cancelTimer <世界> &7- 取消指定世界的血月计时器。
+      &f/moon createMoon <世界> &7- 在指定世界强制生成血月。
+      &f/moon deleteMoon <世界> &7- 从指定世界移除血月。
+      &f/moon amountMobs &7- 显示血月生成的怪物数量。
+      &f/moon reload &7- 重新加载 BloodMoon 插件。
+      &f/moon deleteMobs &7- 删除所有血月生成的怪物。
+      &f/moon info <世界> &7- 显示血月剩余时间。
+      &f/moon allDungeons &7- 显示所有地牢及其坐标。
+      &f/moon help &7- 显示此帮助信息。"
+
+
+moon:
+  startChatMessage: "#BF0D0D当月亮变红时，夜晚的声音变成了黑暗的旋律\n#BF0D0D从阴影中召唤古老的生物\n#BF0D0D你的力量将受到考验，因为血月带来了古老时代的魔法。"
+  startBarMessage: "&4月亮升起.."
+
+  stopChatMessage: "#BF0D0D这个夜晚已经过去，但在月光下发生的事情在记忆中留下了痕迹。"
+  stopBarMessage: "&4月亮落下.."
+
+items:
+  bloodPearl: "&4月亮之眼"
+  bloodAxe: "&4血斧"
+  bloodSword: "&4血剑"
+  bloodPick: "&4血镐"
+  bloodBow: "&4血弓"
+  lore:
+    - " - 召唤月亮 - "

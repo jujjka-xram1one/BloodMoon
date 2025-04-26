@@ -1,0 +1,43 @@
+m:
+  notOp: "#A42626Indisponível"
+  worldNotSelect: "#A42626Mundo não selecionado"
+  worldNotFind: "#A42626Mundo não encontrado"
+  worldNotMoon: "#A42626Mundo não tem lua"
+  worldNotNight: "#A42626Mundo não está à noite"
+  worldHaveMoon: "#A42626Mundo está com lua"
+  worldTimeWait: "#A42626Aguarde.."
+  worldDeleteTask: "#A42626Temporizador removido"
+  worldDeleteMoon: "#A42626Lua removida"
+  amountMobs: "&fInimigos: #A42626%s"
+  disarm: "#A42626Habilidades desativadas"
+  remains: "&fRestante: %s #A42626segundos"
+
+  helpMessage: "
+    &c===== Lua de Sangue - Comandos =====
+    &f/moon startTimer <mundo> &7- Inicia o timer da lua no mundo especificado.
+    &f/moon cancelTimer <mundo> &7- Cancela o timer da lua no mundo especificado.
+    &f/moon createMoon <mundo> &7- Força a criação de uma lua de sangue.
+    &f/moon deleteMoon <mundo> &7- Remove a lua de sangue do mundo especificado.
+    &f/moon amountMobs &7- Exibe o número de mobs gerados pela lua.
+    &f/moon reload &7- Recarrega o plugin BloodMoon.
+    &f/moon deleteMobs &7- Remove todos os mobs gerados pela lua.
+    &f/moon info <mundo> &7- Exibe o tempo restante até o fim da lua.
+    &f/moon allDungeons &7- Exibe todas as masmorras e suas coordenadas.
+    &f/moon help &7- Exibe esta mensagem."
+
+
+moon:
+  startChatMessage: "#BF0D0DQuando a lua se torna vermelha, os sons da noite se transformam na melodia da escuridão\n#BF0D0Dinvocando seres antigos das trevas\n#BF0D0DSeus poderes serão testados, pois a lua sanguinária traz consigo a magia dos tempos antigos."
+  startBarMessage: "&4A lua está subindo.."
+
+  stopChatMessage: "#BF0D0DEsta noite se vai, mas nas memórias ficam os vestígios do misterioso e do incomum que aconteceram sob a luz da lua."
+  stopBarMessage: "&4A lua está descendo.."
+
+items:
+  bloodPearl: "&4Olho da lua"
+  bloodAxe: "&4Machado sanguinário"
+  bloodSword: "&4Espada sanguinária"
+  bloodPick: "&4Picareta sanguinária"
+  bloodBow: "&4Arco sanguinário"
+  lore:
+    - " - Invoca a lua - "

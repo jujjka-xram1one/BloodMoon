@@ -1,0 +1,42 @@
+m:
+  notOp: "#A42626Nicht verf"
+  worldNotSelect: "#A42626Die Welt ist nicht ausgew"
+  worldNotFind: "#A42626Welt nicht gefunden"
+  worldNotMoon: "#A42626Welt hat keinen Mond"
+  worldNotNight: "#A42626Welt ist nicht in der Nacht"
+  worldHaveMoon: "#A42626Welt hat einen Mond"
+  worldTimeWait: "#A42626Bitte warten.."
+  worldDeleteTask: "#A42626Timer gel"
+  worldDeleteMoon: "#A42626Mond gel"
+  amountMobs: "&fMobs: #A42626%s"
+  disarm: "#A42626Fblockiert"
+  remains: "&fist in %s #A42626sekunden geblieben"
+
+  helpMessage: "
+      &c===== Blutmond - Befehle =====
+      &f/moon startTimer <Welt> &7- Startet den Blutmond-Timer in der angegebenen Welt.
+      &f/moon cancelTimer <Welt> &7- Bricht den Blutmond-Timer in der angegebenen Welt ab.
+      &f/moon createMoon <Welt> &7- Erzwingt das Erscheinen des Blutmonds.
+      &f/moon deleteMoon <Welt> &7- Entfernt den Blutmond aus der angegebenen Welt.
+      &f/moon amountMobs &7- Zeigt die Anzahl der durch den Blutmond gespawnten Monster an.
+      &f/moon reload &7- Lädt das BloodMoon-Plugin neu.
+      &f/moon deleteMobs &7- Entfernt alle durch den Blutmond gespawnten Monster.
+      &f/moon info <Welt> &7- Zeigt die verbleibende Zeit des Blutmonds an.
+      &f/moon allDungeons &7- Zeigt alle Dungeons und deren Koordinaten an.
+      &f/moon help &7- Zeigt diese Hilfe an."
+
+
+moon:
+  startChatMessage: "#BF0D0DWenn der Mond rot wird, werden die Gerder Nacht zur Melodie der Dunkelheit\n#BF0D0Dund rufen alte Wesen aus der Dunkelheit hervor\n#BF0D0DIhre Krwerden auf die Probe gestellt, denn der blutrote Mond birgt das Zauber der alten Zeiten."
+  startBarMessage: "&4Der Mond geht auf.."
+
+  stopChatMessage: "#BF0D0DDiese Nacht vergeht, aber in Erinnerungen bleiben die Spuren von Geheimnisvollem und Ungewdas unter dem Licht des Mondes geschah."
+  stopBarMessage: "&4Der Mond geht unter.."
+items:
+  bloodPearl: "&4Mondauge"
+  bloodAxe: "&4Blutaxt"
+  bloodSword: "&4Blutschwert"
+  bloodPick: "&4Blutspitzhacke"
+  bloodBow: "&4Blutbogen"
+  lore:
+    - " - Ruft den Mond herbei - "

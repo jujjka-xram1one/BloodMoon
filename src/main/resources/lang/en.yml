@@ -1,0 +1,42 @@
+m:
+  notOp: "#A42626Not available"
+  worldNotSelect: "#A42626World not select"
+  worldNotFind: "#A42626World not found"
+  worldNotMoon: "#A42626The world doesn't have a moon"
+  worldNotNight: "#A42626The world is not at night"
+  worldHaveMoon: "#A42626World in the Moon"
+  worldTimeWait: "#A42626await.."
+  worldDeleteTask: "#A42626Timer removed"
+  worldDeleteMoon: "#A42626Moon removed"
+  amountMobs: "&fMobs: #A42626%s"
+  disarm: "#A42626Abilities are locked"
+  remains: "&fTook: %s #A42626Seconds"
+
+  helpMessage: "
+      &c===== Blood Moon - Commands =====
+      &f/moon startTimer <world> &7- Start the blood moon timer in the specified world.
+      &f/moon cancelTimer <world> &7- Cancel the blood moon timer in the specified world.
+      &f/moon createMoon <world> &7- Force a blood moon in the specified world.
+      &f/moon deleteMoon <world> &7- Remove the blood moon from the specified world.
+      &f/moon amountMobs &7- Display the number of mobs spawned by the blood moon.
+      &f/moon reload &7- Reload the BloodMoon plugin.
+      &f/moon deleteMobs &7- Delete all mobs spawned by the blood moon.
+      &f/moon info <world> &7- Show the remaining time of the blood moon.
+      &f/moon allDungeons &7- Show all dungeons and their coordinates.
+      &f/moon help &7- Show this help message."
+
+
+moon:
+  startChatMessage: "#BF0D0DWhen the moon turns red, the sounds of the night become the melody of darkness\n#BF0D0Dcalling upon ancient beings from the darkness\n#BF0D0DYour strength will be tested as the blood moon brings with it the magic of old times."
+  startBarMessage: "&4The moon is rising.."
+
+  stopChatMessage: "#BF0D0DThis night passes, but traces of the mysterious and unusual things that happened under the moonlight remain in the memories."
+  stopBarMessage: "&4The moon is setting.."
+items:
+  bloodPearl: "&4Moon's Eye"
+  bloodAxe: "&4Blood Axe"
+  bloodSword: "&4Blood Sword"
+  bloodPick: "&4Blood Pickaxe"
+  bloodBow: "&4Blood Bow"
+  lore:
+    - " - Summons the moon - "

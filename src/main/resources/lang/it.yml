@@ -1,0 +1,41 @@
+m:
+  notOp: "#A42626Non disponibile"
+  worldNotSelect: "#A42626Mondo non selezionato"
+  worldNotFind: "#A42626Mondo non trovato"
+  worldNotMoon: "#A42626Il mondo non ha una luna"
+  worldNotNight: "#A42626Il mondo non di notte"
+  worldHaveMoon: "#A42626Il mondo ha una luna"
+  worldTimeWait: "#A42626Attendere.."
+  worldDeleteTask: "#A42626Timer eliminato"
+  worldDeleteMoon: "#A42626Luna eliminata"
+  amountMobs: "&fMobs: #A42626%s"
+  disarm: "#A42626Abilitbloccate"
+  remains: "&fstato: %s #A42626secondi"
+
+  helpMessage: "
+      &c===== Luna di Sangue - Comandi =====
+      &f/moon startTimer <mondo> &7- Avvia il timer della luna nel mondo specificato.
+      &f/moon cancelTimer <mondo> &7- Annulla il timer della luna nel mondo specificato.
+      &f/moon createMoon <mondo> &7- Genera forzatamente una luna di sangue.
+      &f/moon deleteMoon <mondo> &7- Rimuove la luna di sangue dal mondo specificato.
+      &f/moon amountMobs &7- Mostra il numero di mob generati dalla luna.
+      &f/moon reload &7- Ricarica il plugin BloodMoon.
+      &f/moon deleteMobs &7- Elimina tutti i mob generati dalla luna.
+      &f/moon info <mondo> &7- Mostra il tempo rimanente fino alla fine della luna.
+      &f/moon allDungeons &7- Mostra tutti i dungeon e le loro coordinate.
+      &f/moon help &7- Mostra questo messaggio."
+
+moon:
+  startChatMessage: "#BF0D0DQuando la luna diventa rossa, i suoni della notte diventano la melodia dell'oscurit\n#BF0D0De richiamano antiche creature dall'ombra\n#BF0D0DLe tue forze saranno messe alla prova, poichla luna di sangue porta con sla magia dei tempi antichi."
+  startBarMessage: "&4La luna sorge.."
+
+  stopChatMessage: "#BF0D0DQuesta notte svanisce, ma nei ricordi rimangono tracce di ciche avvenuto alla luce della luna."
+  stopBarMessage: "&4La luna tramonta.."
+items:
+  bloodPearl: "&4Occhio della luna"
+  bloodAxe: "&4Ascia di sangue"
+  bloodSword: "&4Spada di sangue"
+  bloodPick: "&4Piccone di sangue"
+  bloodBow: "&4Arco di sangue"
+  lore:
+    - " - Evoca la luna - "

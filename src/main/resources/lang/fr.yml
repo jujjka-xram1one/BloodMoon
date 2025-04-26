@@ -1,0 +1,42 @@
+m:
+  notOp: "#A42626Indisponible"
+  worldNotSelect: "#A42626Monde non s"
+  worldNotFind: "#A42626Monde non trouv"
+  worldNotMoon: "#A42626Le monde n'a pas de lune"
+  worldNotNight: "#A42626Le monde n'est pas dans la nuit"
+  worldHaveMoon: "#A42626Le monde a une lune"
+  worldTimeWait: "#A42626Veuillez patienter.."
+  worldDeleteTask: "#A42626Minuteur supprim"
+  worldDeleteMoon: "#A42626Lune supprim"
+  amountMobs: "&fMobs: #A42626%s"
+  disarm: "#A42626Compd"
+  remains: "&f: %s #A42626secondes"
+
+  helpMessage: "
+      &c===== Lune de Sang - Commandes =====
+      &f/moon startTimer <monde> &7- Démarrer le minuteur de la lune de sang dans le monde spécifié.
+      &f/moon cancelTimer <monde> &7- Annuler le minuteur de la lune de sang dans le monde spécifié.
+      &f/moon createMoon <monde> &7- Forcer l'apparition de la lune de sang.
+      &f/moon deleteMoon <monde> &7- Supprimer la lune de sang du monde spécifié.
+      &f/moon amountMobs &7- Afficher le nombre de monstres générés par la lune de sang.
+      &f/moon reload &7- Recharger le plugin BloodMoon.
+      &f/moon deleteMobs &7- Supprimer tous les monstres générés par la lune de sang.
+      &f/moon info <monde> &7- Afficher le temps restant de la lune de sang.
+      &f/moon allDungeons &7- Afficher toutes les donjons et leurs coordonnées.
+      &f/moon help &7- Afficher ce message d'aide."
+
+
+moon:
+  startChatMessage: "#BF0D0DQuand la lune devient rouge, les sons de la nuit deviennent la mdes t\n#BF0D0Det appellent les anciennes crde l'obscurit\n#BF0D0DVos pouvoirs seront mis l'car la lune sanglante apporte avec elle la magie des temps anciens."
+  startBarMessage: "&4La lune se l"
+
+  stopChatMessage: "#BF0D0DCette nuit s'achmais dans les souvenirs restent les traces de ce qui s'est passsous la lumide la lune, mystet inhabituel."
+  stopBarMessage: "&4La lune se couche.."
+items:
+  bloodPearl: "&4de la lune"
+  bloodAxe: "&4Hache de sang"
+  bloodSword: "&4de sang"
+  bloodPick: "&4Pioche de sang"
+  bloodBow: "&4Arc de sang"
+  lore:
+    - " - Invoque la lune - "

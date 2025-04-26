@@ -1,0 +1,42 @@
+m:
+  notOp: "#A42626No disponible"
+  worldNotSelect: "#A42626Mundo no seleccionado"
+  worldNotFind: "#A42626Mundo no encontrado"
+  worldNotMoon: "#A42626El mundo no tiene luna"
+  worldNotNight: "#A42626El mundo no estde noche"
+  worldHaveMoon: "#A42626El mundo tiene luna"
+  worldTimeWait: "#A42626Espera.."
+  worldDeleteTask: "#A42626Temporizador eliminado"
+  worldDeleteMoon: "#A42626Luna eliminada"
+  amountMobs: "&fMobs: #A42626%s"
+  disarm: "#A42626Habilidades desarmadas"
+  remains: "&fosted: %s #A42626segundos"
+
+  helpMessage: "
+      &c===== Luna de Sangre - Comandos =====
+      &f/moon startTimer <mundo> &7- Iniciar el temporizador de la luna de sangre en el mundo especificado.
+      &f/moon cancelTimer <mundo> &7- Cancelar el temporizador de la luna de sangre en el mundo especificado.
+      &f/moon createMoon <mundo> &7- Forzar la aparición de la luna de sangre.
+      &f/moon deleteMoon <mundo> &7- Eliminar la luna de sangre del mundo especificado.
+      &f/moon amountMobs &7- Mostrar la cantidad de mobs generados por la luna de sangre.
+      &f/moon reload &7- Recargar el plugin BloodMoon.
+      &f/moon deleteMobs &7- Eliminar todos los mobs generados por la luna de sangre.
+      &f/moon info <mundo> &7- Mostrar el tiempo restante de la luna de sangre.
+      &f/moon allDungeons &7- Mostrar todas las mazmorras y sus coordenadas.
+      &f/moon help &7- Mostrar este mensaje de ayuda."
+
+
+moon:
+  startChatMessage: "#BF0D0DCuando la luna se vuelve roja, los sonidos de la noche se convierten en la melodde la oscuridad\n#BF0D0Dinvocando antiguas criaturas desde las sombras\n#BF0D0DTus poderes serpuestos a prueba, ya que la luna de sangre trae consigo la magia de tiempos antiguos."
+  startBarMessage: "&4La luna se eleva.."
+
+  stopChatMessage: "#BF0D0DEsta noche se va, pero en los recuerdos quedan rastros de lo que sucedibajo la luz de la luna."
+  stopBarMessage: "&4La luna se oculta.."
+items:
+  bloodPearl: "&4Ojo de la luna"
+  bloodAxe: "&4Hacha de sangre"
+  bloodSword: "&4Espada de sangre"
+  bloodPick: "&4Pico de sangre"
+  bloodBow: "&4Arco de sangre"
+  lore:
+    - " - Invoca la luna - "
