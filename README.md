@@ -13,3 +13,5 @@ Features​:
 
 
 The main event of the plugin is the Blood Moon, which radically changes the gameplay. During the Moonlit Night, ordinary mobs stop appearing, they are replaced by unique bloody mobs that pose a serious threat to players. The only task is to survive.
+
+SPIGOT PLUGIN PAGE https://www.spigotmc.org/resources/bloodmoon-%E2%AD%95-unleash-deadly-custom-mobs-powerful-abilities-dynamic-events.115057/
